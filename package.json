@@ -20,9 +20,9 @@
     "test:coverage": "npm test -- --coverage",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier \"src/**/*.{js,jsx,json,scss,md,mdx}\" \"mock/**/*.{js,json,scss,md,mdx}\"",
-    "format:check": "prettier -c \"src/**/*.{js,jsx,json,scss,md,mdx}\" \"mock/**/*.{js,json,scss,md,mdx}\"",
-    "format:fix": "prettier --write \"src/**/*.{js,jsx,json,scss,md,mdx}\" \"mock/**/*.{js,json,scss,md,mdx}\"",
+    "format": "prettier \"src/**/*.{js,jsx,json,scss,md,mdx}\"",
+    "format:check": "prettier -c \"src/**/*.{js,jsx,json,scss,md,mdx}\"",
+    "format:fix": "prettier --write \"src/**/*.{js,jsx,json,scss,md,mdx}\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
