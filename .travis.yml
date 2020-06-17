@@ -6,8 +6,8 @@ cache:
     - node_modules
 script:
   - npm test
-  - npm test:coverage
-  - npm build
+  - npm run test:coverage
+  - npm run build
 
 deploy:
   provider: pages
