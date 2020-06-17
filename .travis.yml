@@ -6,7 +6,7 @@ cache:
     - node_modules
 script:
   # Run format check
-  - npm run format
+  - npm run format:check
   # Run linting check
   - npm run lint
   # Run test
