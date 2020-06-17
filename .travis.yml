@@ -13,6 +13,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $hackernews_clone_token
+  local_dir: build
   keep_history: true
   on:
     branch: master
