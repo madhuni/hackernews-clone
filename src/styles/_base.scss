@@ -1,0 +1,22 @@
+@import './theme';
+@import './variables';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size-body2;
+  font-weight: $font-regular;
+  color: map-get($palette-grey, 'm0');
+  background-color: #fafafa;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
