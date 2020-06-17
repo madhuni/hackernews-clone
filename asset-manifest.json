@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/hackernews-clone/static/css/main.5f361e03.chunk.css",
-    "main.js": "/hackernews-clone/static/js/main.2764f11a.chunk.js",
-    "main.js.map": "/hackernews-clone/static/js/main.2764f11a.chunk.js.map",
+    "main.css": "/hackernews-clone/static/css/main.ebd04a46.chunk.css",
+    "main.js": "/hackernews-clone/static/js/main.d2a2d645.chunk.js",
+    "main.js.map": "/hackernews-clone/static/js/main.d2a2d645.chunk.js.map",
     "runtime-main.js": "/hackernews-clone/static/js/runtime-main.40bb9849.js",
     "runtime-main.js.map": "/hackernews-clone/static/js/runtime-main.40bb9849.js.map",
-    "static/js/2.d6e9b4bb.chunk.js": "/hackernews-clone/static/js/2.d6e9b4bb.chunk.js",
-    "static/js/2.d6e9b4bb.chunk.js.map": "/hackernews-clone/static/js/2.d6e9b4bb.chunk.js.map",
+    "static/js/2.610c658e.chunk.js": "/hackernews-clone/static/js/2.610c658e.chunk.js",
+    "static/js/2.610c658e.chunk.js.map": "/hackernews-clone/static/js/2.610c658e.chunk.js.map",
     "index.html": "/hackernews-clone/index.html",
-    "precache-manifest.f840e2a1fc5f7e524c5a164a0733c6c3.js": "/hackernews-clone/precache-manifest.f840e2a1fc5f7e524c5a164a0733c6c3.js",
+    "precache-manifest.582bf7fdadc66a0e609743443ab13c13.js": "/hackernews-clone/precache-manifest.582bf7fdadc66a0e609743443ab13c13.js",
     "service-worker.js": "/hackernews-clone/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/hackernews-clone/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.d6e9b4bb.chunk.js.LICENSE.txt": "/hackernews-clone/static/js/2.d6e9b4bb.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/hackernews-clone/static/media/logo.5d5d9eef.svg"
+    "static/css/main.ebd04a46.chunk.css.map": "/hackernews-clone/static/css/main.ebd04a46.chunk.css.map",
+    "static/js/2.610c658e.chunk.js.LICENSE.txt": "/hackernews-clone/static/js/2.610c658e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.40bb9849.js",
-    "static/js/2.d6e9b4bb.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.2764f11a.chunk.js"
+    "static/js/2.610c658e.chunk.js",
+    "static/css/main.ebd04a46.chunk.css",
+    "static/js/main.d2a2d645.chunk.js"
   ]
 }
