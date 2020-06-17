@@ -5,8 +5,15 @@ cache:
   directories:
     - node_modules
 script:
+  # Run format check
+  - npm run format
+  # Run linting check
+  - npm run lint
+  # Run test
   - npm test
+  # Run test coverage
   - npm run test:coverage
+  # Create build
   - npm run build
 
 deploy:
