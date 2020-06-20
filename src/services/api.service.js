@@ -4,7 +4,7 @@
  * @returns {Promise<any>}
  */
 const getNews = (pageNumber = 1) => {
-  const url = `http://hn.algolia.com/api/v1/search?page=${pageNumber}`;
+  const url = `https://hn.algolia.com/api/v1/search?page=${pageNumber}`;
   return fetch(url)
     .then((res) => res.json())
     .then(({ hits }) => {
