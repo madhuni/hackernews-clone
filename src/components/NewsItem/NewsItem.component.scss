@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+@import '../../styles/theme';
+
+$min-width-news-item: 6.6rem;
+
+.news-item {
+  min-width: $min-width-news-item;
+  text-align: left;
+  padding: $size-8 0;
+
+  &__caption {
+    color: map-get($palette-grey, 'l3');
+    margin-bottom: $size-8;
+  }
+}
