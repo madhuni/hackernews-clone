@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.news {
+  padding-top: $size-24;
+  padding-bottom: $size-24;
+  @include large-device {
+    padding-top: $size-32;
+    padding-bottom: $size-32;
+  }
+}
