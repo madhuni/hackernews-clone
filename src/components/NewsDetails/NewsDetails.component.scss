@@ -1,0 +1,9 @@
+@import '../../styles/theme';
+
+.color-light {
+  color: map-get($palette-grey, 'l3');
+}
+
+a:hover {
+  text-decoration: underline;
+}

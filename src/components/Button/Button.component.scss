@@ -1,0 +1,22 @@
+@import '../../styles/theme';
+@import '../../styles/variables';
+
+$color-border: map-get($palette-grey, 'l5');
+$color-border-hover: map-get($palette-grey, 'd0');
+$width-border: 0.05rem;
+$border-radius: 0.7rem;
+
+.button {
+  width: auto;
+  padding: $size-8 $size-16;
+  border: $width-border solid $color-border;
+  border-radius: $border-radius;
+  outline: none;
+  transition: border 0.2s;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    border: $width-border solid $color-border-hover;
+  }
+}
