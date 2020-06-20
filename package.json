@@ -27,6 +27,12 @@
     "format:fix": "prettier --write \"src/**/*.{js,jsx,json,scss,md,mdx}\"",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format:fix && npm run lint",
+      "pre-push": "npm run format:fix && npm run lint && npm test"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
