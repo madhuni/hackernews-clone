@@ -35,16 +35,13 @@ export default function NewsPage() {
   const onUpvote = (id) => {
     const modifiedNews = news.map((item) => {
       if (item.objectID === id) {
-        return {
-          ...item,
-          points: item.points + 1,
-        };
+        const modifiedItem = { ...item, points: item.points + 1 };
+        updateModifiedEntries(modifiedItem);
+        return modifiedItem;
       }
       return item;
     });
-    const [targetNews] = modifiedNews.filter((item) => item.objectID === id);
     setNews(modifiedNews);
-    updateModifiedEntries(targetNews);
   };
 
   /**
