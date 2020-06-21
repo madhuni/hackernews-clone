@@ -1,23 +1,26 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 
 import NavBar from './components/NavBar/NavBar.component';
+import PaginationButton from './components/PaginationButton/PaginationButton.component';
 import Routes from './routes/routes';
 
 import './App.scss';
 
-function App({ store }) {
+function App() {
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <div className="App">
-          <NavBar />
-          <Routes />
-        </div>
-      </Provider>
-    </BrowserRouter>
+    <div className="App">
+      <NavBar />
+      <Routes />
+      <section className="pagination-actions">
+        <PaginationButton type="back" clickHandler={() => null}>
+          Previous
+        </PaginationButton>
+        <span className="divider" />
+        <PaginationButton type="forward" clickHandler={() => null}>
+          Next
+        </PaginationButton>
+      </section>
+    </div>
   );
 }
 
