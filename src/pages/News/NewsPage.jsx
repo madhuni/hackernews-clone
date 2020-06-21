@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import NewsCard from '../../components/NewsCard/NewsCard.component';
 
-import getNews from '../../services/api.service';
+import { getNews, updateModifiedEntries } from '../../services/api.service';
 
 import './NewsPage.scss';
 
@@ -28,8 +28,43 @@ export default function NewsPage() {
       });
   }, []);
 
-  const onUpvote = (id) => console.log('upvote!', id);
-  const onHideNews = (id) => console.log('hide!', id);
+  /**
+   * This is a callback function which will trigger the upvote action on a card.
+   * @param {*} id - Unique id of the news item
+   */
+  const onUpvote = (id) => {
+    const modifiedNews = news.map((item) => {
+      if (item.objectID === id) {
+        const modifiedItem = { ...item, points: item.points + 1 };
+        updateModifiedEntries(modifiedItem);
+        return modifiedItem;
+      }
+      return item;
+    });
+    setNews(modifiedNews);
+  };
+
+  /**
+   * This is a callback function which will trigger the hide action on a card.
+   * @param {*} id - Unique id of the news item
+   */
+  const onHideNews = (id) => {
+    const modifiedNews = news
+      .map((item) => {
+        if (item.objectID === id) {
+          const modifiedItem = { ...item, hide: true };
+          updateModifiedEntries(modifiedItem);
+          return modifiedItem;
+        }
+        return item;
+      })
+      .filter((item) => !item.hide);
+
+    setNews(modifiedNews);
+    if (!modifiedNews.length) {
+      setNoContent(true);
+    }
+  };
 
   return (
     <div className="news container">
@@ -37,7 +72,7 @@ export default function NewsPage() {
       {noContent && <div className="no-content">No news found!</div>}
       {news.map((item) => (
         <NewsCard
-          key={item.objectId}
+          key={item.objectID}
           news={item}
           upvoteHandler={() => onUpvote(item.objectID)}
           hideNewsHandler={onHideNews}

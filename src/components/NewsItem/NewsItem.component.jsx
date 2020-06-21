@@ -14,8 +14,10 @@ const NewsItem = ({ caption, value }) => (
 NewsItem.propTypes = {
   caption: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([
+    PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.string,
+    PropTypes.number,
   ]).isRequired,
 };
 
