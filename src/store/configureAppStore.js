@@ -11,7 +11,7 @@ export default function configureAppStore(preloadedState) {
   }
 
   const store = configureStore({
-    reducer: rootReducer.news,
+    reducer: rootReducer,
     middleware,
     preloadedState,
   });
