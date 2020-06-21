@@ -1,0 +1,17 @@
+@import '../../styles/theme';
+@import '../../styles/variables';
+
+$min-height: 20rem;
+
+.trends {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $min-height;
+  background-color: map-get($palette-grey, 'l7');
+  padding-top: $size-16;
+  padding-right: $size-16;
+  padding-bottom: $size-16;
+  border: 0.1rem solid map-get($palette-primary, 'm0');
+  border-radius: 0.7rem;
+}
