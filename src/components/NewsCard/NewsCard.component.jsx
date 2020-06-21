@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdThumbUp } from 'react-icons/md';
+import { MdArrowUpward } from 'react-icons/md';
 import Proptypes from 'prop-types';
 
 import NewsItem from '../NewsItem/NewsItem.component';
@@ -45,9 +45,9 @@ const NewsCard = ({
       </section>
       {/* User action for the news */}
       <section className="news-card__actions">
-        <MdThumbUp
+        <MdArrowUpward
+          className="upvote-icon"
           size="24"
-          color="#A6A6A6"
           onClick={() => upvoteHandler(id)}
         />
         <Button clickHandler={() => hideNewsHandler(id)}>Hide</Button>
