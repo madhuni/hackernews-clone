@@ -1,6 +1,6 @@
 @import '../../styles/theme';
 
-$color-background: #ef6537;
+$color-background: map-get($palette-primary, 'm0');
 
 .nav-bar {
   width: 100%;

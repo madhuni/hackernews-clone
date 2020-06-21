@@ -2,7 +2,7 @@
 @import '../../styles/theme';
 @import '../../styles/mixins';
 
-$color-border: #ef6537;
+$color-border: map-get($palette-primary, 'm0');
 $color-background: map-get($palette-grey, 'l7');
 $height: 6rem;
 $width-border: $size-8;
@@ -79,6 +79,14 @@ $border-radius: 0.7rem;
 
   &__actions {
     justify-content: flex-end;
+
+    .upvote-icon {
+      color: map-get($palette-grey, 'l3');
+      cursor: pointer;
+      &:active {
+        color: map-get($palette-primary, 'm0');
+      }
+    }
 
     & > *:not(:first-child) {
       margin-left: $size-16;
