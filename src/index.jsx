@@ -5,6 +5,7 @@ import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 import { getItem, setItem } from './services/localStorage.service';
+import configureAppStore from './store/configureAppStore';
 
 import './index.scss';
 
@@ -13,9 +14,11 @@ if (getItem('MODIFIED_ENTRIES') === null) {
   setItem('MODIFIED_ENTRIES', {});
 }
 
+const store = configureAppStore();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={store} />
   </React.StrictMode>,
   document.getElementById('root')
 );
