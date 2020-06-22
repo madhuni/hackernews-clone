@@ -1,23 +1,35 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { PAGE_INCREMENT, PAGE_DECREMENT } from './store/actions/page.action';
 
 import NavBar from './components/NavBar/NavBar.component';
+import Paginator from './components/Paginator/Paginator.component';
 import Routes from './routes/routes';
 
 import './App.scss';
 
-function App({ store }) {
+function App() {
+  const currentPage = useSelector((state) => state.currentPage);
+  const dispatch = useDispatch();
+
+  /* Callback function for Page increment/decrement action */
+  const onIncrementPageNumber = () => dispatch({ type: PAGE_INCREMENT });
+  const onDecrementPageNumber = () => dispatch({ type: PAGE_DECREMENT });
+
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <div className="App">
-          <NavBar />
-          <Routes />
-        </div>
-      </Provider>
-    </BrowserRouter>
+    <div className="App">
+      <NavBar />
+      <Routes />
+      {/* {currentPage !== null ? <PaginationActions /> : null} */}
+      {currentPage !== null ? (
+        <Paginator
+          onDecrementHandler={onDecrementPageNumber}
+          onIncrementHandler={onIncrementPageNumber}
+          backDisabled={currentPage === 1}
+        />
+      ) : null}
+    </div>
   );
 }
 

@@ -42,6 +42,7 @@
     bottom: 0;
     right: 0;
     background-color: rgba($color: #000000, $alpha: 0.8);
+    z-index: 1;
 
     .title {
       color: map-get($palette-grey, 'l7');

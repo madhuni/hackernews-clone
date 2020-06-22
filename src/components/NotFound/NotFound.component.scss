@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+$max-width: 60rem;
+
+.not-found {
+  &__image {
+    width: 75%;
+    max-width: $max-width;
+    height: auto;
+    margin: $size-32 auto;
+  }
+
+  &__message {
+    margin-bottom: $size-16;
+  }
+}

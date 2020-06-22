@@ -3,9 +3,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
 import { MdTimeline } from 'react-icons/md';
 
+import Trends from '../../components/Trends/Trends.component';
 import NewsCard from '../../components/NewsCard/NewsCard.component';
+import NotFound from '../../components/NotFound/NotFound.component';
 
 import { getNews } from '../../services/api.service';
 import {
@@ -13,28 +16,51 @@ import {
   upvoteNewsItem,
   hideNewsItem,
 } from '../../store/actions/news.action';
+import { setCurrentPage } from '../../store/actions/page.action';
 
 import './NewsPage.scss';
-import Trends from '../../components/Trends/Trends.component';
 
 export default function NewsPage() {
+  /* Local state of the page */
   const [loading, setLoading] = useState(true);
   const [noContent, setNoContent] = useState(false);
   const [showTrends, setShowTrends] = useState(false);
+  /* State from Store */
   const news = useSelector((state) => state.news);
+  const currentPage = useSelector((state) => state.currentPage);
+  /* Router related constants */
+  const { id } = useParams();
+  const history = useHistory();
+  /* Dispatch function */
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getNews()
-      .then((res) => {
-        setLoading(false);
-        dispatch(getNewsResponse(res));
-      })
-      .catch(() => {
-        setLoading(false);
-      });
+    if (id !== undefined) {
+      dispatch(setCurrentPage(id));
+      history.push(`/${id}`);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (id === undefined) {
+      history.push(`/1`);
+    } else if (currentPage === null) {
+      history.push(`/not-found`);
+    } else {
+      history.push(`/${currentPage}`);
+    }
+    if (Number(id) === currentPage) {
+      getNews(currentPage)
+        .then((res) => {
+          setLoading(false);
+          dispatch(getNewsResponse(res));
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    }
+  }, [history, currentPage, dispatch, id]);
 
   useEffect(() => {
     if (!news.length && !loading) {
@@ -95,28 +121,36 @@ export default function NewsPage() {
 
   return (
     <div className="news container">
-      {/* Loading Text */}
-      {loading && <div className="loading">Loading News...</div>}
-      {/* No Content Text */}
-      {noContent && <div className="no-content">No news found!</div>}
-      {/* Container to show the list of news */}
-      {news.length ? (
-        <div className="news__container">
-          {/* Show Trends Button */}
-          <ShowTrendsButton />
-          {/* News list */}
-          {news.map((item) => (
-            <NewsCard
-              key={item.objectID}
-              news={item}
-              upvoteHandler={() => onUpvote(item.objectID)}
-              hideNewsHandler={onHideNews}
-            />
-          ))}
-        </div>
-      ) : null}
-      {/* Overlay to show the trends graph */}
-      {showTrends && <TrendsView />}
+      {currentPage === null ? (
+        <NotFound />
+      ) : (
+        <>
+          {/* Loading Text */}
+          {loading && <div className="loading">Loading News...</div>}
+          {/* No Content Text */}
+          {noContent && <div className="no-content">No news found!</div>}
+          {/* Container to show the list of news */}
+          <div className="news__container">
+            {news.length ? (
+              <>
+                <ShowTrendsButton />
+                {/* News list */}
+                {news.map((item) => (
+                  <NewsCard
+                    key={item.objectID}
+                    news={item}
+                    upvoteHandler={() => onUpvote(item.objectID)}
+                    hideNewsHandler={onHideNews}
+                  />
+                ))}
+              </>
+            ) : null}
+            {/* Show Trends Button */}
+          </div>
+          {/* Overlay to show the trends graph */}
+          {showTrends && <TrendsView />}
+        </>
+      )}
     </div>
   );
 }

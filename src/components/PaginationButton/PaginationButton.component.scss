@@ -1,0 +1,39 @@
+@import '../../styles/theme';
+@import '../../styles/variables';
+
+.pagination-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: map-get($palette-primary, 'm0');
+  padding: $size-8;
+
+  &--forward {
+    .icon-container {
+      order: 2;
+      margin-left: $size-8;
+    }
+    .children-container {
+      order: 1;
+    }
+  }
+
+  &--back {
+    .icon-container {
+      order: 1;
+      margin-right: $size-8;
+    }
+    .children-container {
+      order: 2;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
