@@ -2,7 +2,7 @@
   "name": "hackernews-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://madhuni.github.io/hackernews-clone",
+  "homepage": "https://madhuni-hackernews.herokuapp.com",
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.6",
     "@testing-library/jest-dom": "^4.2.4",
