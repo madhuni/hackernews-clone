@@ -18,10 +18,12 @@
     "react-scripts": "3.4.1",
     "recharts": "^1.8.5",
     "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "CI=true react-scripts test --env=jsdom --passWithNoTests",
     "test:coverage": "npm test -- --coverage",
