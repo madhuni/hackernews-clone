@@ -13,10 +13,11 @@ export default function pageReducer(state = initialState, action) {
     case PAGE_DECREMENT:
       return state - 1;
     case CURRENT_PAGE:
-      if (typeof action.currentPage !== 'number') {
-        return undefined;
+      // eslint-disable-next-line no-restricted-globals
+      if (isNaN(Number(action.currentPage))) {
+        return null;
       }
-      return action.currentPage;
+      return Number(action.currentPage);
     default:
       return state;
   }
