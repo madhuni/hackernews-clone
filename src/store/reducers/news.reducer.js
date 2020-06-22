@@ -25,7 +25,7 @@ export default function newsReducer(state = initialState, action) {
         })
         .filter((item) => !item.hide);
     case UPVOTE_NEWS_ITEM:
-      return state.news.map((item) => {
+      return state.map((item) => {
         if (item.objectID === action.newsItemId) {
           const modifiedItem = { ...item, points: item.points + 1 };
           updateModifiedEntries(modifiedItem); // side-effect to update the localstorage
