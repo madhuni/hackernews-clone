@@ -10,7 +10,7 @@
   .divider {
     width: 0.2rem;
     height: 2.1rem;
-    margin: 0 0.8rem;
+    margin: 0 $size-8;
     background-color: map-get($palette-primary, 'm0');
   }
 }
