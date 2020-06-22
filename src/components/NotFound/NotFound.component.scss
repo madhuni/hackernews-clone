@@ -1,0 +1,12 @@
+.not-found {
+  &__image {
+    width: 75%;
+    max-width: 60rem;
+    height: auto;
+    margin: 3.2rem auto;
+  }
+
+  &__message {
+    margin-bottom: 1.6rem;
+  }
+}
