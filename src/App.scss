@@ -1,20 +1,3 @@
-@import './styles/variables';
-@import './styles/theme';
-
 .App {
   text-align: center;
-}
-
-.pagination-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: -$size-8 0 $size-32 0;
-
-  .divider {
-    width: 0.2rem;
-    height: 2.1rem;
-    margin: 0 0.8rem;
-    background-color: map-get($palette-primary, 'm0');
-  }
 }
