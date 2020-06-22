@@ -19,6 +19,8 @@ deploy:
   provider: heroku
   skip_cleanup: true
   keep_history: true
-  app: madhuni-hackernews
+  app:
+    master: madhuni-hackernews
+  on: master
   api_key:
     secure: iEROTbIqBAV8Bino6SeYNQqIzkDh3ZjULdpQGqWKr5x+BjjWbuv//t9gAE2NXB1MU31RloK8Z2jQ4kPqbpi7tKLcIz8v1Fm3MdqC2Yu+3EWWaqJg9WzlYOSz9+KeUOx8os33ynv8SHIlTUiKKlR+5RYJfKEvOIzzNHsDcp6O/rWAdltyRIpFMB+HMoEq5gP4DIlkzWs8pSHnxVV1sjQ74/iK40OFEUpIcBda/hRfNA8QahfGOfQkw53diao0eIcHFXyx29Cxra5av1o82ATsBvwx5FsUw2dk36O4IDXLjJqKE2V6u1rLU7lo/e1vuM9AstcI46fPp3hjH/Vy//lhGTc1cxmR5/JvEtoKqH7GDoNCQZQmEzZ3YhHX5nwXahjRYXoWJzdp+QaRSP+/2d724CrXTKhV/nZCDxp7ZKr7dlyLgKD2cBA84Kgx/WhalsdWXjHdDEnIeZEST7tSwWGA0l6nD3iVhyQy46nS81FnqPND+mgk0TIGqBIlRN7WOkjEu7r25Vm03tX561/KWGrvUtS1dftapam0O6ivPflYD/s3zQP6myf6jWRvIRtguFyJzUhcccx1ModO5cCtvoIbUmWmqfwxxvBW0ZJZEhSsu5lRGizfP3aROKdEidh7v1VGao8CgGFJlRaaK8onzYithX9SxX07jiffn67i5QcGRt0=
