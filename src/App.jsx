@@ -21,7 +21,6 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes />
-      {/* {currentPage !== null ? <PaginationActions /> : null} */}
       {currentPage !== null ? (
         <Paginator
           onDecrementHandler={onDecrementPageNumber}

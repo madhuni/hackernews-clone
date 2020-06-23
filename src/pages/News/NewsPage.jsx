@@ -51,6 +51,7 @@ export default function NewsPage() {
       history.push(`/${currentPage}`);
     }
     if (Number(id) === currentPage) {
+      setLoading(true);
       getNews(currentPage)
         .then((res) => {
           setLoading(false);
@@ -131,7 +132,7 @@ export default function NewsPage() {
           {noContent && <div className="no-content">No news found!</div>}
           {/* Container to show the list of news */}
           <div className="news__container">
-            {news.length ? (
+            {news.length && !loading ? (
               <>
                 <ShowTrendsButton />
                 {/* News list */}
