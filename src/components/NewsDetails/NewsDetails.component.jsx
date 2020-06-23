@@ -9,7 +9,7 @@ const NewsDetails = ({ title, url, author, createdAt }) => {
   const urlString = url ? `(${getShortURL(url)})` : '';
   return (
     <>
-      <span>{title}</span>
+      <span className="t-body1">{title}</span>
       <a className="t-caption color-light" href={url}>
         {' '}
         {urlString}
