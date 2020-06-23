@@ -52,6 +52,12 @@ The new UI design is made using **Figma** and the spec can be found [here](https
 
 - [x] Use HTML semantic markup.
 
+## Timeline Chart
+
+Since I have implemented a new design, Timeline chart will not be visibile directly on the page (not a good UX). For solving that problem I have added a button `Show Treds` on top of each page which will show the timeline chart.
+
+The timeline chart is still dynamic and if you upvote a news or hide a news, those changes will reflact in the chart when user will reopen that.
+
 ## Lighthouse results
 
 ![](lighthouse-score.svg)
