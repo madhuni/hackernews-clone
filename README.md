@@ -55,3 +55,9 @@ The new UI design is made using **Figma** and the spec can be found [here](https
 ## Lighthouse results
 
 ![](lighthouse-score.svg)
+
+## Additional Notes
+
+In-app navigation b/w different pages is working fine. Use `Previous` and `Next` options to navigate b/w pages.
+
+Back/Forward options on browsers are not supported and have some bug. I am aware of this and will fix that later on.
